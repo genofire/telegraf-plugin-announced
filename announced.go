@@ -49,6 +49,7 @@ type Announced struct {
 	Collector       []string
 	Port            int
 	RequestInterval int64 `toml:"request_interval"`
+	nodes           Nodes
 	time            time.Time
 }
 
