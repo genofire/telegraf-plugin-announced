@@ -7,6 +7,7 @@ import (
 	"net"
 	"reflect"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/influxdb/telegraf/plugins"
