@@ -2,7 +2,6 @@ package announced
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net"
 	"reflect"
@@ -105,7 +104,7 @@ func (coll *Collector) close() {
 }
 
 func (coll *Collector) sender(h *Announced) {
-	addr, _ := net.ResolveUDPAddr("udp", fmt.Sprintf("[%s]:%d", h.Destination, h.Port))
+	addr, _ := net.ResolveUDPAddr("udp", net.JoinHostPort(h.Destination, h.Port))
 
 	c := time.Tick(time.Duration(h.RequestInterval) * time.Millisecond)
 
